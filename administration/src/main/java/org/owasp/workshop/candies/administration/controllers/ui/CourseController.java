@@ -75,39 +75,24 @@ public class CourseController {
         return REDIRECT_TO_ADMIN_COURSES_LIST;
     }
 
-//    @PostMapping("register/{id}")
-//    public String registerCourse(@PathVariable("id") long id, @RequestParam String studentID, Course course, Model model) {
-//        return REDIRECT_TO_MY_COURSES_LIST;
-//    }
 
     @GetMapping("register/{id}")
-//    public String registerCourse(@PathVariable("id") long id, @RequestParam(required = false) Long studentID, @RequestParam(required = false) String userrole, @RequestParam(required = false) String session, Model model) {
     public String registerCourse(@PathVariable("id") long id, @RequestParam Long studentID, @RequestParam String userrole, @RequestParam String session, Model model) {
-        if(!sessionService.isUserLoggedIn(session))
-            return REDIRECT_TO_HOME;
+        //TODO
 
-        courseService.registerToCourse(id, studentID);
-//        model.addAttribute("userSessionInfo", sessionService.getUserSessionInfo(session));
         return sessionService.constructPathWithSessionInfo(REDIRECT_TO_MY_COURSES_LIST, session);
     }
 
     @GetMapping("mylist")
-//    public String showMyCourses(@RequestParam(required = false) Long studentID, @RequestParam(required = false) String userrole, @RequestParam(required = false) String session, Model model) {
     public String showMyCourses(@RequestParam Long studentID, @RequestParam String userrole, @RequestParam String session, Model model) {
         if(!sessionService.isUserLoggedIn(session))
             return REDIRECT_TO_HOME;
-        //return REDIRECT_TO_COURSES_LIST;
 
         model.addAttribute("courses", courseService.findByStudentId(studentID));
         model.addAttribute("userSessionInfo", sessionService.getUserSessionInfo(session));
         return VIEW_STUDENT_COURSES;
     }
 
-
-//    @PostMapping("register/{id}")
-//    public String registerCourse(@PathVariable("id") long id, UserSessionInfo userSessionInfo, Course course, Model model) {
-//        return REDIRECT_TO_MY_COURSES_LIST;
-//    }
 
     @GetMapping("delete/{id}")
     public String deletecourse(@PathVariable("id") long id, Model model) {
