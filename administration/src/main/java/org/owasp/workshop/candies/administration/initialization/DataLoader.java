@@ -39,7 +39,7 @@ public class DataLoader implements ApplicationRunner {
         initCourses(courses);
         initStudentUsers(studentUsers);
 
-        initStudentRegistrations(courses, studentUsers);
+//        initStudentRegistrations(courses, studentUsers);
 
     }
 

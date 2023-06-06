@@ -22,6 +22,19 @@ public class CourseRegistration {
     @Column(name = "registration_date")
     private Date registrationDate;
 
+    @Column(name = "exam_date")
+    private Date examDate;
+
+    @Column(name = "grade")
+    private short grade;
+
+    @Column(name = "student_name")
+    private String studentName;
+
+    @Column(name = "course_name")
+    private String courseName;
+
+
     public CourseRegistration() {}
 
     public CourseRegistration(Student student, Course course) {
@@ -52,5 +65,45 @@ public class CourseRegistration {
 
     public void setCourse(Course course) {
         this.course = course;
+    }
+
+    public Date getRegistrationDate() {
+        return registrationDate;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
+    }
+
+    public Date getExamDate() {
+        return examDate;
+    }
+
+    public void setExamDate(Date examDate) {
+        this.examDate = examDate;
+    }
+
+    public short getGrade() {
+        return grade;
+    }
+
+    public void setGrade(short grade) {
+        this.grade = grade;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 }

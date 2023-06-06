@@ -11,13 +11,11 @@ import java.util.List;
 public class CourseServiceImpl implements CourseService{
 
     private final CourseRepository courseRepository;
-    private final CourseExamRepository courseExamRepository;
     private final CourseRegistrationRepository courseRegistrationRepository;
     private final StudentRepository studentRepository;
 
-    public CourseServiceImpl(CourseRepository courseRepository, CourseExamRepository courseExamRepository, CourseRegistrationRepository courseRegistrationRepository, StudentRepository studentRepository) {
+    public CourseServiceImpl(CourseRepository courseRepository, CourseRegistrationRepository courseRegistrationRepository, StudentRepository studentRepository) {
         this.courseRepository = courseRepository;
-        this.courseExamRepository = courseExamRepository;
         this.courseRegistrationRepository = courseRegistrationRepository;
         this.studentRepository = studentRepository;
     }

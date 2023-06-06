@@ -52,8 +52,6 @@ public class UserController {
     @PostMapping("create")
     public String addStudentUser(StudentUser studentUser, Model model) {
         userService.registerStudentUser(studentUser);
-//        userService.registerUser(user);
-//        userService.save(user);
         return REDIRECT_TO_LOGIN_USER;
     }
 
