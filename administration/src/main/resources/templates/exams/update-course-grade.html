@@ -16,7 +16,9 @@
     <div class="card">
         <div class="card-body">
             <div class="col-md-8">
-                <form action="#" th:action="@{/courses/registrations/update/{id}(id=${courseExam.id})}" th:object="${courseExam}" method="post">
+<!--                <a th:href="@{/courses/register/{id}(id=${course.id},studentID=${userSessionInfo.studentID},userrole=${userSessionInfo.userRole},session=${userSessionInfo.sessionToken})}" class="btn btn-primary">-->
+<!--                <form action="#" th:action="@{/courses/registrations/update/{id}(id=${courseExam.id})}" th:object="${courseExam}" method="post">-->
+                <form action="#" th:action="@{/courses/registrations/update/{id}(id=${courseExam.id},studentID=${userSessionInfo.studentID},userrole=${userSessionInfo.userRole},session=${userSessionInfo.sessionToken})}" th:object="${courseExam}" method="post">
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="cname" class="col-form-label">Course</label> <input type="text" th:field="*{courseName}" class="form-control" id="cname" placeholder="Name">

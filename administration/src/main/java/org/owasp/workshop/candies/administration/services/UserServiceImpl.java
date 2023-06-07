@@ -42,10 +42,13 @@ public class UserServiceImpl implements UserService{
     @Override
     public User registerStudentUser(StudentUser studentUser) {
         //TODO
-        User newUser = userRepository.save(new User(studentUser));
+
+        StudentUser studentUserWithEncryptedPassword = new StudentUser(studentUser);
+        User newUser = userRepository.save(new User(studentUserWithEncryptedPassword));
         Student newStudent = studentRepository.save(new Student(newUser));
         return newUser;
     }
+
 
 
 }

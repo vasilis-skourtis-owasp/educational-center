@@ -28,6 +28,16 @@ public class StudentUser {
         this.city = city;
     }
 
+    public StudentUser(StudentUser studentUser) {
+        this.username = studentUser.getUsername();
+        this.password = studentUser.getPassword();
+        this.email = studentUser.getEmail();
+        this.firstName = studentUser.getFirstName();
+        this.surname = studentUser.getSurname();
+        this.address = studentUser.getAddress();
+        this.city = studentUser.city;
+    }
+
     public String getUsername() {
         return username;
     }

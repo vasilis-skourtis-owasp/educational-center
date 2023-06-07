@@ -61,6 +61,9 @@ public class SessionServiceImpl implements SessionService{
         if(null!=studentID) {
             sb.append("&studentID=").append(studentID);
         }
+        else{
+            sb.append("&studentID=").append(0);
+        }
 
         return sb.toString();
 

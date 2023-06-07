@@ -64,9 +64,13 @@ public class UserController {
             UserSessionInfo userSessionInfo = sessionService.createSessionForUser(loggedInUser);
             if(!sessionService.isUserAdmin(userSessionInfo.getSessionToken())) {
                 userSessionInfo.setStudentID(studentRepository.findByEmail(loggedInUser.getEmail()).get(0).getId());
+
+                redirectURL = sessionService.constructPathWithSessionInfo(REDIRECT_TO_COURSES_LIST, userSessionInfo.getSessionToken());
+            } else {
+                userSessionInfo.setStudentID(0L);
+                redirectURL = sessionService.constructPathWithSessionInfo(REDIRECT_TO_ADMIN_COURSES_REGISTRATIONS_LIST, userSessionInfo.getSessionToken());
             }
 
-            redirectURL = sessionService.constructPathWithSessionInfo(REDIRECT_TO_COURSES_LIST, userSessionInfo.getSessionToken());
         }
 
         return redirectURL;

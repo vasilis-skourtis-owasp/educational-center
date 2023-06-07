@@ -37,7 +37,8 @@
                                 <td th:text="${courseExam.studentName}"></td>
                                 <td th:text="${courseExam.grade}"></td>
                                 <td th:text="${courseExam.examDate}"></td>
-                                <td><a th:href="@{/courses/registrations/edit/{id}(id=${courseExam.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                <td><a th:href="@{/courses/registrations/edit/{id}(id=${courseExam.id},studentID=${userSessionInfo.studentID},userrole=${userSessionInfo.userRole},session=${userSessionInfo.sessionToken})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+<!--                                <a th:href="@{/courses/register/{id}(id=${course.id},studentID=${userSessionInfo.studentID},userrole=${userSessionInfo.userRole},session=${userSessionInfo.sessionToken})}" class="btn btn-primary">-->
                             </tr>
                             </tbody>
                         </table>
