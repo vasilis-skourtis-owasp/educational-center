@@ -26,7 +26,7 @@ public class CourseRegistration {
     private Date examDate;
 
     @Column(name = "grade")
-    private short grade;
+    private Integer grade;
 
     @Column(name = "student_name")
     private String studentName;
@@ -40,6 +40,8 @@ public class CourseRegistration {
     public CourseRegistration(Student student, Course course) {
         this.student = student;
         this.course = course;
+        this.studentName = student.getName() + " " + student.getSurname();
+        this.courseName = course.getName();
         this.registrationDate=new Date();
     }
 
@@ -83,11 +85,11 @@ public class CourseRegistration {
         this.examDate = examDate;
     }
 
-    public short getGrade() {
+    public Integer getGrade() {
         return grade;
     }
 
-    public void setGrade(short grade) {
+    public void setGrade(Integer grade) {
         this.grade = grade;
     }
 

@@ -42,6 +42,7 @@ public class Student {
 
     public Student(User newUser) {
         this.name = newUser.getFirstName();
+        this.surname = newUser.getSurname();
         this.email = newUser.getEmail();
     }
 

@@ -39,8 +39,13 @@ public class DataLoader implements ApplicationRunner {
         initCourses(courses);
         initStudentUsers(studentUsers);
 
-//        initStudentRegistrations(courses, studentUsers);
+        initStudentRegistrations(courses, studentUsers);
+        initCourseGrades(courses, studentUsers);
 
+    }
+
+    private void initCourseGrades(List<Course> courses, List<StudentUser> studentUsers) {
+        //TODO
     }
 
     private void initStudentRegistrations(List<Course> courses, List<StudentUser> studentUsers) {

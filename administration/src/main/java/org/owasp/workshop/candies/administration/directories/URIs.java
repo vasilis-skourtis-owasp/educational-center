@@ -17,10 +17,17 @@ public class URIs {
     public static final String VIEW_COURSES_ADMIN = "courses/view-courses-admin";
     public static final String VIEW_STUDENT_COURSES = "courses/view-student-courses";
 
+    public static final String VIEW_COURSES_REGISTRATIONS = "exams/view-course-grades";
+    public static final String UPDATE_COURSE_GRADE = "exams/update-course-grade";
+
+    public static final String REDIRECT_TO_ADMIN_COURSES_REGISTRATIONS_LIST = "redirect:/courses/registrations/list";
+
     public static final String REDIRECT_TO_COURSES_PUBLIC_LIST = "redirect:/courses/list/public";
     public static final String REDIRECT_TO_COURSES_LIST = "redirect:/courses/list";
     public static final String REDIRECT_TO_MY_COURSES_LIST = "redirect:/courses/mylist";
     public static final String REDIRECT_TO_ADMIN_COURSES_LIST = "redirect:/courses/admin/list";
+
+
 
 
 
