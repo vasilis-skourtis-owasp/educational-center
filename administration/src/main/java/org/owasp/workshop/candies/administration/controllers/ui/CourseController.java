@@ -79,6 +79,10 @@ public class CourseController {
     @GetMapping("register/{id}")
     public String registerCourse(@PathVariable("id") long id, @RequestParam Long studentID, @RequestParam String userrole, @RequestParam String session, Model model) {
         //TODO
+        if(!sessionService.isUserLoggedIn(session))
+            return REDIRECT_TO_HOME;
+
+        courseService.registerToCourse(id, studentID);
 
         return sessionService.constructPathWithSessionInfo(REDIRECT_TO_MY_COURSES_LIST, session);
     }

@@ -31,13 +31,20 @@ public class UserServiceImpl implements UserService{
     @Override
     public User loginUser(String username, String password) {
         //TODO
-        return null;
+        User user = userRepository.findByUsername(username);
+        if(null!=user) {
+            user.getPassword().equals(password);
+        }
+
+        return user;
     }
 
     @Override
     public User registerStudentUser(StudentUser studentUser) {
         //TODO
-        return null;
+        User newUser = userRepository.save(new User(studentUser));
+        Student newStudent = studentRepository.save(new Student(newUser));
+        return newUser;
     }
 
 
